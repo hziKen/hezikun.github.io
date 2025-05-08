@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>故宫摄影攻略 - 2025年春季版</title>
+    <link href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-100-M/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://s2.ssl.qhres2.com/static/56662140ef7d5d03.css" rel="stylesheet">
+    <style>
+        .photo-spot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .map-container {
+            height: 500px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .marker-label {
+            background-color: #7e22ce;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- 标题部分 -->
+        <header class="mb-12 text-center">
+            <h1 class="text-4xl font-bold text-purple-800 mb-2">故宫摄影全攻略</h1>
+            <p class="text-xl text-purple-600">2025年春季版 · 捕捉紫禁城的永恒之美</p>
+            <div class="mt-4 flex justify-center">
+                <span class="inline-block px-4 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">2025-04-30更新</span>
+            </div>
+        </header>
+
+        <!-- 基本信息卡片 -->
+        <section class="mb-12 bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="md:flex">
+                <div class="md:w-1/3">
+                    <img src="https://qncdn.n.cn/so/upfile/8cf60eb53e692b1304c34051ea966092.jpeg" alt="故宫全景" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6 md:w-2/3">
+                    <h2 class="text-2xl font-bold text-purple-800 mb-4">故宫博物院基本信息</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <h3 class="font-semibold text-purple-700 mb-1"><i class="fas fa-map-marker-alt mr-2"></i>地址</h3>
+                            <p class="text-gray-700">北京市东城区景山前街4号</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-purple-700 mb-1"><i class="fas fa-clock mr-2"></i>开放时间</h3>
+                            <p class="text-gray-700">旺季(4月1日-10月31日): 8:30-17:00<br>淡季(11月1日-3月31日): 9:00-16:30</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-purple-700 mb-1"><i class="fas fa-ticket-alt mr-2"></i>门票价格</h3>
+                            <p class="text-gray-700">旺季: ¥60/人<br>淡季: ¥40/人<br>学生、老年人等享有折扣</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-purple-700 mb-1"><i class="fas fa-info-circle mr-2"></i>注意事项</h3>
+                            <p class="text-gray-700">周一闭馆(法定节假日除外)<br>需提前预约</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 地图部分 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-purple-800 mb-4 flex items-center">
+                <i class="fas fa-map-marked-alt mr-3"></i>摄影机位地图导航
+            </h2>
+            <div class="map-container" id="map-container"></div>
+            <div class="mt-4 flex flex-wrap gap-2">
+                <button id="show-all" class="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition">
+                    <i class="fas fa-expand mr-2"></i>显示全部路线
+                </button>
+                <button id="show-route" class="px-4 py-2 bg-purple-100 text-purple-800 rounded-md hover:bg-purple-200 transition">
+                    <i class="fas fa-route mr-2"></i>显示推荐路线
+                </button>
+            </div>
+        </section>
+
+        <!-- 摄影机位推荐 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-purple-800 mb-6 flex items-center">
+                <i class="fas fa-camera-retro mr-3"></i>最佳摄影机位推荐
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 内金水桥 -->
+                <div class="photo-spot-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <img src="https://qncdn.n.cn/so/upfile/1fc704e55ad1a4aeba361146cfbeebcf.jpeg" alt="内金水桥" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-purple-800 mb-2">1. 内金水桥</h3>
+                        <p class="text-gray-700 mb-3">进入午门后的第一个摄影点，位于右侧，适合夕阳时分拍摄温暖和平静的大场景。</p>
+                        <div class="bg-purple-50 p-3 rounded-lg mb-3">
+                            <h4 class="font-semibold text-purple-700 mb-1"><i class="fas fa-cog mr-2"></i>摄影参数</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>焦距: 24-70mm</li>
+                                <li>光圈: f/8-f/11</li>
+                                <li>快门: 1/125s以上</li>
+                                <li>ISO: 100-400</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center text-sm text-purple-600">
+                            <i class="fas fa-map-pin mr-2"></i>地图标记点: A
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 太和殿 -->
+                <div class="photo-spot-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <img src="https://qncdn.n.cn/so/upfile/8cf60eb53e692b1304c34051ea966092.jpeg" alt="太和殿" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-purple-800 mb-2">2. 太和殿</h3>
+                        <p class="text-gray-700 mb-3">南侧栏杆处适合拍摄全景或搭配人物的超级大场景，天气好时能看到远处传统悬山顶和蓝天衬托下的宫殿轮廓。</p>
+                        <div class="bg-purple-50 p-3 rounded-lg mb-3">
+                            <h4 class="font-semibold text-purple-700 mb-1"><i class="fas fa-cog mr-2"></i>摄影参数</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>焦距: 16-35mm(广角)</li>
+                                <li>光圈: f/8-f/16</li>
+                                <li>快门: 1/200s以上</li>
+                                <li>ISO: 100-200</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center text-sm text-purple-600">
+                            <i class="fas fa-map-pin mr-2"></i>地图标记点: B
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 钟粹宫 -->
+                <div class="photo-spot-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <img src="https://qncdn.n.cn/so/upfile/7c110c9ce2d373d53d1a07e1883078f4.jpeg" alt="钟粹宫" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-purple-800 mb-2">3. 钟粹宫</h3>
+                        <p class="text-gray-700 mb-3">场景丰富，适合用对称构图展示中国古建美感，可结合树木枝叶做前景增加层次感。</p>
+                        <div class="bg-purple-50 p-3 rounded-lg mb-3">
+                            <h4 class="font-semibold text-purple-700 mb-1"><i class="fas fa-cog mr-2"></i>摄影参数</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>焦距: 35-85mm</li>
+                                <li>光圈: f/2.8-f/5.6</li>
+                                <li>快门: 1/60s以上</li>
+                                <li>ISO: 200-800</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center text-sm text-purple-600">
+                            <i class="fas fa-map-pin mr-2"></i>地图标记点: C
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 御花园 -->
+                <div class="photo-spot-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <img src="https://qncdn.n.cn/so/upfile/0a4d43aed28c0160fdbfdc0135b20fc4.jpeg" alt="御花园" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-purple-800 mb-2">4. 御花园</h3>
+                        <p class="text-gray-700 mb-3">位于故宫北端，能展现宫廷小巧精致布局，四季景色各异，尤其适合拍摄细节和局部。</p>
+                        <div class="bg-purple-50 p-3 rounded-lg mb-3">
+                            <h4 class="font-semibold text-purple-700 mb-1"><i class="fas fa-cog mr-2"></i>摄影参数</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>焦距: 50-200mm</li>
+                                <li>光圈: f/4-f/8</li>
+                                <li>快门: 1/125s以上</li>
+                                <li>ISO: 200-400</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center text-sm text-purple-600">
+                            <i class="fas fa-map-pin mr-2"></i>地图标记点: D
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 实用小贴士 -->
+        <section class="bg-white rounded-xl shadow-md p-6 mb-12">
+            <h2 class="text-2xl font-bold text-purple-800 mb-6 flex items-center">
+                <i class="fas fa-lightbulb mr-3"></i>摄影小贴士
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex items-start">
+                    <div class="bg-purple-100 p-3 rounded-full mr-4 text-purple-800">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-purple-700 mb-1">避开人流高峰</h3>
+                        <p class="text-gray-700">选择闭馆前一个小时前往热点区域，此时游客较少，光线也较为柔和。</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="bg-purple-100 p-3 rounded-full mr-4 text-purple-800">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-purple-700 mb-1">设备保护</h3>
+                        <p class="text-gray-700">带上防尘罩保证相机安全，春季北京可能有风沙天气。</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="bg-purple-100 p-3 rounded-full mr-4 text-purple-800">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-purple-700 mb-1">着装搭配</h3>
+                        <p class="text-gray-700">穿着中式或与古风匹配的服饰，可以增加照片的文化氛围。</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="bg-purple-100 p-3 rounded-full mr-4 text-purple-800">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-purple-700 mb-1">遵守规则</h3>
+                        <p class="text-gray-700">部分区域可能关闭，不要触碰文物或违反规定，使用三脚架需提前申请。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 最佳拍摄时间 -->
+        <section class="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl shadow-md p-6 mb-12">
+            <h2 class="text-2xl font-bold text-purple-800 mb-6 flex items-center">
+                <i class="fas fa-sun mr-3"></i>最佳拍摄时间建议
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <h3 class="font-semibold text-purple-700 mb-2 flex items-center">
+                        <i class="fas fa-sunrise mr-2 text-yellow-500"></i>清晨
+                    </h3>
+                    <p class="text-gray-700 text-sm">8:30-10:00<br>光线柔和，游客较少，适合拍摄大场景和建筑细节。</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <h3 class="font-semibold text-purple-700 mb-2 flex items-center">
+                        <i class="fas fa-sun mr-2 text-orange-500"></i>正午
+                    </h3>
+                    <p class="text-gray-700 text-sm">11:00-13:00<br>光线强烈，适合拍摄建筑结构和对称构图。</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <h3 class="font-semibold text-purple-700 mb-2 flex items-center">
+                        <i class="fas fa-sunset mr-2 text-red-500"></i>傍晚
+                    </h3>
+                    <p class="text-gray-700 text-sm">15:00-17:00<br>光线温暖，适合拍摄金水桥和太和殿的暖色调场景。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-600 text-sm py-8 border-t border-gray-200">
+            <p>© 2025 故宫摄影攻略 · 数据更新于2025年4月30日</p>
+            <p class="mt-2">本攻略由纳米深度研究智能体提供技术支持</p>
+        </footer>
+    </div>
+
+    <!-- 高德地图API -->
+    <script src="https://webapi.amap.com/maps?v=2.0&key=54806f10eb181204c918280968c0aa11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化地图
+            const map = new AMap.Map('map-container', {
+                viewMode: '3D',
+                zoom: 15,
+                center: [116.397428, 39.90923] // 故宫中心位置
+            });
+
+            // 添加缩放工具
+            AMap.plugin(['AMap.ToolBar'], function() {
+                map.addControl(new AMap.ToolBar({
+                    position: 'RB'
+                }));
+            });
+
+            // 摄影点坐标
+            const photoSpots = [
+                {name: '内金水桥', position: [116.39153, 39.90674], label: 'A'},
+                {name: '太和殿', position: [116.397428, 39.9168], label: 'B'},
+                {name: '钟粹宫', position: [116.4035, 39.9132], label: 'C'},
+                {name: '御花园', position: [116.3995, 39.9215], label: 'D'}
+            ];
+
+            // 添加标记点
+            const markers = photoSpots.map(spot => {
+                const marker = new AMap.Marker({
+                    position: spot.position,
+                    title: spot.name,
+                    label: {
+                        content: `<div class="marker-label">${spot.label}</div>`,
+                        direction: 'top'
+                    }
+                });
+                return marker;
+            });
+
+            // 添加标记到地图
+            map.add(markers);
+
+            // 绘制路线
+            const path = photoSpots.map(spot => spot.position);
+            const polyline = new AMap.Polyline({
+                path: path,
+                isOutline: true,
+                outlineColor: '#7e22ce',
+                borderWeight: 1,
+                strokeColor: '#7e22ce',
+                strokeOpacity: 0.8,
+                strokeWeight: 5,
+                strokeStyle: 'solid',
+                lineJoin: 'round',
+                lineCap: 'round',
+                zIndex: 50
+            });
+
+            // 显示全部路线按钮
+            document.getElementById('show-all').addEventListener('click', function() {
+                map.setFitView(markers);
+            });
+
+            // 显示路线按钮
+            document.getElementById('show-route').addEventListener('click', function() {
+                map.add(polyline);
+                map.setFitView([...markers, polyline]);
+            });
+
+            // 初始显示所有标记点
+            map.setFitView(markers);
+        });
+    </script>
+</body>
+</html>
